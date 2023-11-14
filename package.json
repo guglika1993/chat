@@ -5,6 +5,7 @@
   "main": "chat.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+	"start" : "npm install && node chat.js"
   },
   "type": "module",
   "author": "Giorgi Tskipurishvili",
