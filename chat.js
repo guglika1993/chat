@@ -91,8 +91,9 @@ server.listen(PORT, () => {
 /////////////>>>>>>>> SOCKET.IO <<<<<<<<<<<//////////////////
 
 io.on("connection", (socket) => {
-    socket.on("sendMessage", (li) => {
-        io.emit("sendMessageToAll", li);
+    socket.on("sendMessage", (message) => {
+        console.log(message);
+        io.emit("sendMessageToAll", message);
 
     })
     //    socket.on("cellClicked", (role, name, id, whosTurn)=>{

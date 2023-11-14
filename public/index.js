@@ -9,10 +9,13 @@ const messageInput = document.querySelector("#messageInput");
 const socket = io();
 
 sendButton.addEventListener("click", ()=>{
-    let li = document.createElement("li").innerText = messageInput;
-    socket.emit("sendMessage", li);
+   let message = messageInput.value;
+    socket.emit("sendMessage", message);
 })
 
-socket.on("sendMessageToAll", (data)=>{
-    messagesArea.appendChild(data);
+socket.on("sendMessageToAll", (message)=>{
+    let li = document.createElement('li');
+    li.innerText = message;
+    messagesArea.appendChild(li);
+    messageInput.value = "";
 })
