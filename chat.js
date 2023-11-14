@@ -42,6 +42,22 @@ server.listen(PORT, () => {
 
 })
 
+// function checkData(username, password, callback){
+//     client.query(`SELECT * FROM chatRoom WHERE username = '${username}' AND password = '${password}'`, (err, result)=>{
+//         try {
+//             if(err) throw err;
+//             if(result.rows.length > 0){
+//                 callback(true);
+//             }
+//             else{
+//                 callback(false);
+//             }
+//         } catch (err) {
+//            alert("Error! " + err); 
+//         }
+//     }
+//     )}
+
 // function joinOrCreateChat(name, password, callback) {
 //     client.query(`SELECT * FROM chatRoom WHERE password = '${password}' AND user2 IS NULL`, (err, result) => {
 //         try {
@@ -75,11 +91,8 @@ server.listen(PORT, () => {
 /////////////>>>>>>>> SOCKET.IO <<<<<<<<<<<//////////////////
 
 io.on("connection", (socket) => {
-    socket.on("joinOrCreate", (name, password) => {
-        joinOrCreateChat(name, password, (callback)=>{
-            
-                io.emit("startingChat", callback);
-        });
+    socket.on("sendMessage", (li) => {
+        io.emit("sendMessageToAll", li);
 
     })
     //    socket.on("cellClicked", (role, name, id, whosTurn)=>{

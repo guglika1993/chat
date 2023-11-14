@@ -7,12 +7,12 @@ const messagesArea = document.querySelector(".messagesArea");
 const messageInput = document.querySelector("#messageInput");
 
 const socket = io();
-let user1, user2, roomId;
-enterButton.addEventListener("click", ()=>{
-    let name = nameInput.value;
-    let password = passwordInput.value;
-    socket.emit("joinOrCreate", name, password);
+
+sendButton.addEventListener("click", ()=>{
+    let li = document.createElement("li").innerText = messageInput;
+    socket.emit("sendMessage", li);
 })
-socket.on("startingChat", (data)=>{
-    alert(data);
+
+socket.on("sendMessageToAll", (data)=>{
+    messagesArea.appendChild(data);
 })

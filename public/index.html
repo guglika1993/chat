@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Chat Room</title>
 </head>
 <body>
     <main>
-        <div class="container">
-            <input id="nameInput" type="text" placeholder="Enter your name...">
-            <input id="passwordInput" type="password" placeholder="Enter room password...">
-            <button id="enterButton" type="button">Enter</button>
+        <div class="container2">
+            <div class="messagesArea">
+               
+            </div>
+            <textarea name="message" id="messageInput" cols="30" rows="10"></textarea>
+            <button id="sendButton" type="button">Send</button>
         </div>
     </main>
-
-    
     <script src="/socket.io/socket.io.js"></script>
     <script src="index.js"></script>
 </body>
