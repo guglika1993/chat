@@ -1,0 +1,44 @@
+main{
+    border: 2px solid red;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0px;
+    left:0px;
+}
+.container{
+    border: 2px solid black;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.container2{
+    border: 2px solid black;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 306px;
+    max-height: auto;
+}
+
+#messageInput{
+    resize: none;
+    width: 300px;
+    height: 50px;
+}
+.messagesArea{
+    height: 400px;
+    overflow: scroll;
+}
+li{
+    height: 30px;
+    list-style-type: none;
+}
+li:nth-child(2n){
+    background-color: red;
+}
